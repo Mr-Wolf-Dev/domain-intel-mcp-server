@@ -1,0 +1,36 @@
+{
+  "title": "B2B Domain Intelligence & Email Verifier Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Company Domains, URLs, or Emails",
+      "type": "array",
+      "description": "List of domains (e.g. stripe.com), website URLs, or email addresses to enrich.",
+      "editor": "stringList",
+      "prefill": ["stripe.com", "openai.com"],
+      "default": []
+    },
+    "includeDns": {
+      "title": "Include DNS / Email Readiness Check",
+      "type": "boolean",
+      "description": "Resolve MX, SPF, and DMARC records to detect email provider (Google Workspace, Microsoft 365) and deliverability score.",
+      "default": true
+    },
+    "includeHtmlAnalysis": {
+      "title": "Include Tech Stack & Contact Extraction",
+      "type": "boolean",
+      "description": "Fetch the homepage over HTTP to detect tech stack, emails, social links, and key company pages.",
+      "default": true
+    },
+    "maxItems": {
+      "title": "Maximum Domains",
+      "type": "integer",
+      "description": "Maximum number of unique domains to enrich (1–1000).",
+      "minimum": 1,
+      "maximum": 1000,
+      "prefill": 25,
+      "default": 100
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "domain": { "type": "string", "description": "Normalized bare domain (e.g. stripe.com)." },
+      "finalUrl": { "type": ["string", "null"], "description": "Final resolved URL after redirects." },
+      "httpStatus": { "type": ["integer", "null"], "description": "HTTP status code." },
+      "reachable": { "type": "boolean", "description": "Whether the homepage responded cleanly." },
+      "title": { "type": ["string", "null"], "description": "HTML page title." },
+      "metaDescription": { "type": ["string", "null"], "description": "Meta description." },
+      "language": { "type": ["string", "null"], "description": "Detected HTML language code." },
+      "techStack": { "type": "array", "items": { "type": "string" }, "description": "Detected frameworks, CDN, analytics, CRM, and ATS tools." },
+      "emails": { "type": "array", "items": { "type": "string" }, "description": "Public email addresses found on the homepage." },
+      "socialLinks": { "type": "object", "description": "Discovered LinkedIn, X/Twitter, GitHub, YouTube, Instagram, and Facebook URLs." },
+      "keyPages": { "type": "object", "description": "Discovered Contact, About, Careers, Pricing, Privacy, and Blog URLs." },
+      "dns": { "type": ["object", "null"], "description": "MX, emailProvider, SPF, DMARC, disposable check, and deliverabilityScore (0-100)." },
+      "enrichedAt": { "type": "string", "description": "ISO 8601 enrichment timestamp." }
+    },
+    "required": ["domain", "reachable", "techStack", "emails", "socialLinks", "keyPages", "enrichedAt"]
+  },
+  "views": {
+    "overview": {
+      "title": "Domains Overview",
+      "transformation": {
+        "fields": ["domain", "reachable", "title", "techStack", "emails", "finalUrl"]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "domain": { "label": "Domain", "format": "text" },
+          "reachable": { "label": "Reachable", "format": "boolean" },
+          "title": { "label": "Title", "format": "text" },
+          "techStack": { "label": "Tech Stack", "format": "array" },
+          "emails": { "label": "Emails", "format": "array" },
+          "finalUrl": { "label": "URL", "format": "link" }
+        }
+      }
+    }
+  }
+}

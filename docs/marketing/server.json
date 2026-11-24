@@ -1,0 +1,32 @@
+{
+  "name": "domain-intel-mcp-server",
+  "displayName": "B2B Domain Intelligence & Email Verifier (Tech Stack, DNS/MX, Contacts)",
+  "version": "0.1.0",
+  "vendor": "mrWolf",
+  "description": "Streamable HTTP MCP server & Apify Actor for B2B lead enrichment: tech stack detection, DNS/MX/SPF/DMARC email readiness, social links, emails, and key company pages.",
+  "homepage": "https://apify.com/mr.wolf/domain-intel-mcp-server",
+  "transport": {
+    "type": "streamable-http",
+    "url": "https://mr-wolf-1--domain-intel-mcp-server.apify.actor/mcp",
+    "authentication": {
+      "type": "bearer",
+      "header": "Authorization",
+      "prefix": "Bearer "
+    }
+  },
+  "tools": [
+    {
+      "name": "enrich_domain",
+      "description": "Enrich a single B2B company domain with tech stack, DNS/MX/SPF/DMARC email readiness, social links, emails, and key pages."
+    },
+    {
+      "name": "batch_enrich_domains",
+      "description": "Enrich up to 25 B2B domains in a single MCP call."
+    },
+    {
+      "name": "verify_email_domain",
+      "description": "Fast DNS-only check verifying MX records, email provider, SPF, DMARC, and disposable status."
+    }
+  ],
+  "categories": ["lead-generation", "business", "developer-tools"]
+}

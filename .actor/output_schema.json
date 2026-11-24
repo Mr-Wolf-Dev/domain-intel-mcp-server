@@ -1,0 +1,20 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "B2B Domain Intelligence & Email Verifier Output",
+  "description": "Enriched B2B domain intelligence records with tech stack, emails, social links, and DNS/MX deliverability checks.",
+  "type": "object",
+  "properties": {
+    "overview": {
+      "type": "string",
+      "title": "Domains Overview",
+      "description": "Table view of enriched B2B domains.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items?view=overview"
+    },
+    "dataset": {
+      "type": "string",
+      "title": "Full Dataset (JSON)",
+      "description": "Complete JSON dataset of enriched domain records.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    }
+  }
+}

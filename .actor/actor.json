@@ -1,0 +1,14 @@
+{
+  "actorSpecification": 1,
+  "name": "domain-intel-mcp-server",
+  "title": "B2B Domain Intelligence & Email Verifier + MCP",
+  "description": "HTTP & DNS-only Apify Actor & Standby MCP Server for B2B lead enrichment: tech stack detection, DNS/MX/SPF/DMARC email readiness, social links, emails, and key company pages.",
+  "version": "0.1",
+  "usesStandbyMode": true,
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  }
+}
