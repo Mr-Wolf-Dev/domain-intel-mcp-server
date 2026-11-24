@@ -1,5 +1,7 @@
 # B2B Domain & Company Intelligence + Email Verifier (Tech Stack, DNS/MX, Contacts + MCP)
 
+[![Mr-Wolf-Dev/domain-intel-mcp-server MCP server](https://glama.ai/mcp/servers/Mr-Wolf-Dev/domain-intel-mcp-server/badges/score.svg)](https://glama.ai/mcp/servers/Mr-Wolf-Dev/domain-intel-mcp-server)
+
 Enrich **B2B company domains**, detect **website tech stacks**, verify **DNS/MX/SPF/DMARC email readiness**, and extract **public contact emails, social links, and key company pages** — available both as a fast **HTTP & DNS-only Apify Actor** and as a **Standby MCP Server** for AI agents.
 
 Designed for **Pay-Per-Event (PPE)** cost efficiency with **zero headless browsers** and **no proxies required** (runs smoothly on **256 MB RAM**).
