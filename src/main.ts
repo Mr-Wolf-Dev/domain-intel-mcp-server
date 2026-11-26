@@ -1,6 +1,6 @@
 import { pathToFileURL } from 'node:url';
 import { runActorBatch, type DomainBillingEvent } from './adapters/apify-actor.js';
-import { createDomainMcpHttpServer } from './adapters/mcp-server.js';
+import { createConfiguredMcpServer, createDomainMcpHttpServer } from './adapters/mcp-server.js';
 import { NodeDomainInspector } from './adapters/node-domain-inspector.js';
 import { runDualModeActor } from './shared/actor-runner.js';
 import { createApifyBillingMeter } from './shared/billing-meter.js';
@@ -12,6 +12,7 @@ export async function main(): Promise<void> {
   await runDualModeActor({
     runBatch: () => runActorBatch(inspector, billing),
     createMcpServer: () => createDomainMcpHttpServer({ inspector, billing }),
+    createStdioMcpServer: () => createConfiguredMcpServer({ inspector, billing }),
   });
 }
 

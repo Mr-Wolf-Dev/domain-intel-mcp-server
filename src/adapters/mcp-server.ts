@@ -14,7 +14,7 @@ export interface McpServerDependencies {
   billing: BillingMeter<DomainBillingEvent>;
 }
 
-function createConfiguredMcpServer(deps: McpServerDependencies): McpServer {
+export function createConfiguredMcpServer(deps: McpServerDependencies): McpServer {
   const server = new McpServer({
     name: 'domain-intel-mcp-server',
     version: '0.1.0',
